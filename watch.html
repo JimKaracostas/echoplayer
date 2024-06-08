@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="logo.ico">
+  <title>EchoPlayer</title>
+  <link rel="stylesheet" href="/CSS/styles.css">
+</head>
+<body>
+  <header class="main-header">
+    <a href="/index.html" class="logo-link">
+      <h1>EchoPlayer</h1>
+    </a>
+    <img src="logo.ico" alt="EchoPlayer Logo" class="header-logo">
+  </header>
+  <div class="watch-container">
+    <iframe id="player" src="" allowfullscreen></iframe>
+  </div>
+  <script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const id = urlParams.get('id');
+    const type = urlParams.get('type');
+    document.getElementById('player').src = `https://vidsrc.to/embed/${type}/${id}`;
+  </script>
+</body>
+</html>

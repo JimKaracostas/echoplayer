@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="logo.ico">
+  <title>EchoPlayer</title>
+  <link rel="stylesheet" href="/CSS/styles.css">
+</head>
+<body>
+  <header class="main-header">
+    <a href="/index.html" class="logo-link">
+      <h1>EchoPlayer</h1>
+    </a>
+    <img src="logo.ico" alt="EchoPlayer Logo" class="header-logo">
+  </header>
+  <div class="container">
+    <header>
+      <h1>Watch Now</h1>
+      <div class="tabs">
+        <button id="moviesTab" class="active" aria-pressed="true">Movies</button>
+        <button id="tvShowsTab" aria-pressed="false">TV Series</button>
+        <button id="watchlistTab" aria-pressed="false">Watchlist</button>
+      </div>
+    </header>
+    <nav>
+      <ul>
+        <li id="popularTab" class="active" aria-selected="true">Popular</li>
+        <li id="latestTab" aria-selected="false">Latest</li>
+      </ul>
+    </nav>
+    <main id="content">
+      <div class="grid" id="moviesGrid"></div>
+      <div class="grid" id="tvShowsGrid" style="display: none;"></div>
+    </main>
+    <div class="pagination" id="pagination"></div>
+  </div>
+  <script src="/JS/main.js"></script>
+</body>
+</html>
