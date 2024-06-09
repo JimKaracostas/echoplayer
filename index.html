@@ -14,20 +14,26 @@
     </a>
     <img src="logo.ico" alt="EchoPlayer Logo" class="header-logo">
   </header>
-  <div class="container">
+  <div class="watch-container">
     <header>
       <h1>Watch Now</h1>
-      <div class="tabs">
-        <button id="moviesTab" class="active" aria-pressed="true">Movies</button>
-        <button id="tvShowsTab" aria-pressed="false">TV Series</button>
-        <button id="watchlistTab" aria-pressed="false">Watchlist</button>
+      <div class="dropdown">
+        <button class="dropbtn">Menu</button>
+        <div class="dropdown-content">
+          <a id="moviesTab">Movies</a>
+          <a id="tvShowsTab">TV Series</a>
+          <a id="watchlistTab">Watchlist</a>
+        </div>
       </div>
     </header>
     <nav>
-      <ul>
-        <li id="popularTab" class="active" aria-selected="true">Popular</li>
-        <li id="latestTab" aria-selected="false">Latest</li>
-      </ul>
+      <div class="dropdown">
+        <button class="dropbtn">Sort By</button>
+        <div class="dropdown-content">
+          <a id="trendingTab">Trending</a>
+          <a id="latestTab">Latest</a>
+        </div>
+      </div>
     </nav>
     <div class="search-bar">
       <input type="text" id="searchInput" placeholder="Search for movies or TV shows...">
