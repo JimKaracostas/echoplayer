@@ -66,11 +66,12 @@ const fetchContent = async () => {
   const response = await fetch(url);
   const data = await response.json();
   totalPages = data.total_pages;
+
   data.results.forEach(item => {
     const img = document.createElement('img');
     img.src = `https://image.tmdb.org/t/p/w500${item.poster_path}`;
     img.alt = item.title || item.name;
-    img.addEventListener('click', () => showDetails(item.id));
+    img.addEventListener('click', () => showDetails(item.id, currentType));
     grid.appendChild(img);
   });
   updatePagination();
@@ -98,8 +99,7 @@ const updatePagination = () => {
   }
 };
 
-const showDetails = (id) => {
-  const type = currentType === 'movie' ? 'movie' : 'tv';
+const showDetails = (id, type) => {
   window.location.href = `details.html?id=${id}&type=${type}`;
 };
 
@@ -116,7 +116,7 @@ const searchContent = async (query) => {
     const img = document.createElement('img');
     img.src = `https://image.tmdb.org/t/p/w500${item.poster_path}`;
     img.alt = item.title || item.name;
-    img.addEventListener('click', () => showDetails(item.id));
+    img.addEventListener('click', () => showDetails(item.id, item.media_type));
     searchResultsGrid.appendChild(img);
   });
 };
