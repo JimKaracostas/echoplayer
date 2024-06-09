@@ -29,10 +29,15 @@
         <li id="latestTab" aria-selected="false">Latest</li>
       </ul>
     </nav>
+    <div class="search-bar">
+      <input type="text" id="searchInput" placeholder="Search for movies or TV shows...">
+      <button id="searchButton">Search</button>
+    </div>
     <main id="content">
       <div class="grid" id="moviesGrid"></div>
       <div class="grid" id="tvShowsGrid" style="display: none;"></div>
     </main>
+    <div class="grid" id="searchResultsGrid" style="display: none;"></div>
     <div class="pagination" id="pagination"></div>
   </div>
   <script src="/JS/main.js"></script>
