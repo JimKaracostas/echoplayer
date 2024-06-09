@@ -8,7 +8,7 @@ const searchButton = document.getElementById('searchButton');
 
 let currentPage = 1;
 let totalPages = 1;
-let currentCategory = 'popular';
+let currentCategory = 'trending';
 let currentType = 'movie';
 
 document.getElementById('moviesTab').addEventListener('click', () => {
@@ -19,8 +19,8 @@ document.getElementById('tvShowsTab').addEventListener('click', () => {
   switchTab('tvShows', 'tv');
 });
 
-document.getElementById('popularTab').addEventListener('click', () => {
-  switchCategory('popular');
+document.getElementById('trendingTab').addEventListener('click', () => {
+  switchCategory('trending');
 });
 
 document.getElementById('latestTab').addEventListener('click', () => {
@@ -40,23 +40,24 @@ const switchTab = (tab, type) => {
   moviesGrid.style.display = type === 'movie' ? 'grid' : 'none';
   tvShowsGrid.style.display = type === 'tv' ? 'grid' : 'none';
   searchResultsGrid.style.display = 'none';
+  currentPage = 1; // Reset to page 1 when switching tabs
   fetchContent();
 };
 
 const switchCategory = (category) => {
   currentCategory = category;
-  document.getElementById('popularTab').classList.toggle('active', category === 'popular');
+  document.getElementById('trendingTab').classList.toggle('active', category === 'trending');
   document.getElementById('latestTab').classList.toggle('active', category === 'latest');
-  document.getElementById('popularTab').ariaSelected = (category === 'popular');
+  document.getElementById('trendingTab').ariaSelected = (category === 'trending');
   document.getElementById('latestTab').ariaSelected = (category === 'latest');
-  currentPage = 1;
+  currentPage = 1; // Reset to page 1 when switching categories
   fetchContent();
 };
 
 const fetchContent = async () => {
   const grid = currentType === 'movie' ? moviesGrid : tvShowsGrid;
   grid.innerHTML = '';
-  let  url = `https://api.themoviedb.org/3/trending/${currentType}/day?api_key=${apiKey}&page=${currentPage}`;
+  let url = `https://api.themoviedb.org/3/trending/${currentType}/day?api_key=${apiKey}&page=${currentPage}`;
   if (currentCategory === 'latest') {
     url = currentType === 'movie'
       ? `https://api.themoviedb.org/3/movie/now_playing?api_key=${apiKey}&page=${currentPage}`
