@@ -207,6 +207,33 @@ nav li.active {
   background-color: #004500;
 }
 
+.search-bar {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.search-bar input {
+  width: 70%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px 0 0 5px;
+  outline: none;
+}
+
+.search-bar button {
+  padding: 10px;
+  border: none;
+  background-color: #00b300;
+  color: #ffffff;
+  cursor: pointer;
+  border-radius: 0 5px 5px 0;
+}
+
+.search-bar button:hover {
+  background-color: #004500;
+}
+
 @media (max-width: 768px) {
   h1 {
     text-align: center;
@@ -258,6 +285,20 @@ nav li.active {
     width: 80%;
     height: 400px;
   }
+
+  .search-bar {
+    flex-direction: column;
+  }
+
+  .search-bar input,
+  .search-bar button {
+    width: 100%;
+    border-radius: 5px;
+  }
+
+  .search-bar button {
+    margin-top: 10px;
+  }
 }
 
 @media (max-width: 480px) {
@@ -296,5 +337,12 @@ nav li.active {
   #player {
     width: 100%;
     height: auto;
+  }
+
+  .search-bar {
+    position: block;
+    align-items: center;
+    text-align: center;
+    width: 50%;
   }
 }
