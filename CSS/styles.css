@@ -398,3 +398,8 @@ nav li.active {
   background-color: #004500;
   cursor: pointer;
 }
+
+/* New class for right-aligned dropdown */
+.dropdown-right .dropdown-content {
+  right: 0;
+}
