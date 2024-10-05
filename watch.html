@@ -97,7 +97,7 @@
             );
 
             if (firstEpisode) {
-              player.src = `https://vidsrc.me/embed/tv/${id}/${firstSeasonNumber}/${firstEpisode.episode_number}`;
+              player.src = `https://vidsrc.to/embed/tv/${id}/${firstSeasonNumber}/${firstEpisode.episode_number}`;
             }
           };
 
@@ -123,12 +123,12 @@
           episodeSelect.addEventListener("change", () => {
             const seasonNumber = seasonSelect.value;
             const episodeNumber = episodeSelect.value;
-            player.src = `https://vidsrc.me/embed/tv/${id}/${seasonNumber}/${episodeNumber}`;
+            player.src = `https://vidsrc.to/embed/tv/${id}/${seasonNumber}/${episodeNumber}`;
           });
 
           showFirstEpisode();
         } else if (type === "movie") {
-          player.src = `https://vidsrc.me/embed/movie/${id}`;
+          player.src = `https://vidsrc.to/embed/movie/${id}`;
           document.querySelector('.dropdown-container').style.display = 'none';
         }
       };
